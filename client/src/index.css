@@ -6,12 +6,36 @@
 @tailwind utilities;
 
 .container {
+  overflow-x: hidden;
   font-family: "Noto Sans Hebrew", sans-serif;
   margin-left: auto;
   margin-right: auto;
 }
+@media (min-width: 320px) and(max-width:480px) {
+  .container {
+    overflow-x: hidden;
+    font-family: "Noto Sans Hebrew", sans-serif;
+    margin-left: auto;
+    margin-left: auto;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    font-family: "Noto Sans Hebrew", sans-serif;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+/* @media (max-width: 1024px) {
+  .container {
+    overflow-x: hidden;
+    font-family: "Noto Sans Hebrew", sans-serif;
+    padding-right: 4rem;
+  }
+} */
+/*  */
 /* font-family: 'Noto Sans Hebrew', sans-serif;
-font-family: 'Poppins', sans-serif; */
+font-family: 'Poppins', sans-serif;
 
 /* width: 249px;
   height: 62px;
@@ -20,7 +44,34 @@ font-family: 'Poppins', sans-serif; */
   font-family: serif; */
 
 .navbar {
-  font: 1.2em sans-serif;
+  /* font: 1.2em; */
+  overflow-x: hidden;
+  font-family: "Noto Sans Hebrew", sans-serif;
+}
+@media (max-width: 320px) {
+  .navbar {
+    overflow-x: hidden;
+    font: 1em sans-serif;
+    font-family: "Noto Sans Hebrew", sans-serif;
+  }
+}
+@media (max-width: 320px) {
+  .search {
+    width: 50%;
+    height: 2rem;
+  }
+  .searchbutton {
+    height: 2rem;
+    width: 5rem;
+    font-size: small;
+  }
+}
+@media (min-width: 1024px) {
+  .navbar {
+    overflow-x: hidden;
+    font: 1em sans-serif;
+    font-family: "Noto Sans Hebrew", sans-serif;
+  }
 }
 .button {
   width: 130px;
@@ -28,6 +79,59 @@ font-family: 'Poppins', sans-serif; */
   border-radius: 10px;
   color: white;
   background: #338573;
+  font-family: "Noto Sans Hebrew", sans-serif;
+}
+@media (min-width: 319px) and (max-width: 395) {
+  .button {
+    margin-left: 2.5rem;
+
+    width: 60px; /* Make the button full width on small screens */
+    height: 20px; /* Allow the height to adjust based on content */
+  }
+
+  .button.register {
+    margin-right: 2px;
+  }
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .button {
+    width: 85px;
+    height: 30px;
+  }
+}
+@media (min-width: 481px) and (max-width: 540px) {
+  .button {
+    width: 120px;
+  }
+}
+.button.view {
+  margin-top: 2rem;
+  padding-top: 0.8rem;
+  font-size: larger;
+  width: 150px;
+  height: 50px;
+}
+@media (min-width: 319px) and (max-width: 479px) {
+  .button.view {
+    margin-right: 1rem;
+    margin-top: 1rem;
+    padding-top: 2px;
+    width: 80px;
+    height: 30px;
+    font-size: small;
+  }
+}
+.describe {
+}
+@media (min-width: 480px) and (max-width: 768px) {
+  .button.view {
+    margin-right: 1rem;
+    margin-top: 2rem;
+    padding: 4px;
+    width: 90px;
+    height: 40px;
+    font-size: small;
+  }
 }
 .home {
   font-family: "Poppins", sans-serif;
@@ -37,4 +141,199 @@ font-family: 'Poppins', sans-serif; */
   line-height: 80px;
   letter-spacing: 0em;
   text-align: left;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .home {
+    /* padding-left: 1rem; */
+    font-family: "Poppins", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+}
+.text {
+  padding-left: 4rem;
+  font-family: "Poppins", sans-serif;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .text {
+    padding-left: 1rem;
+  }
+}
+.list {
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 80px;
+  letter-spacing: 0em;
+  padding-left: 4rem;
+}
+@media (min-width: 319px) and (max-width: 395px) {
+  .list {
+    font-size: 15px;
+    font-weight: 200;
+  }
+}
+@media (min-width: 320px) and (max-width: 395px) {
+  .sort {
+    margin-top: 16px;
+  }
+}
+.company {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+
+  letter-spacing: 0em;
+  text-align: left;
+  color: #5f5858;
+}
+.position {
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+@media (min-width: 319px) and (max-width: 480px) {
+  .position {
+    font-size: 20px;
+  }
+}
+.singlecompany {
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 80px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  /* font-family: Poppins;
+  font-size: 24px;
+
+  line-height: 80px;
+  letter-spacing: 0em;
+  text-align: left; */
+}
+@media (min-width: 319px) and (max-width: 767px) {
+  .singlecompany {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 80px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+}
+@media (max-width: 320px) {
+  .singlecompany {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 80px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+}
+@media (max-width: 320px) {
+  .type {
+    font-size: 14px;
+  }
+}
+
+.title {
+  padding-left: 2rem;
+  font-weight: 900;
+  font-family: "Noto Sans Hebrew", sans-serif;
+  font-size: 22px;
+  line-height: 40px;
+}
+.title1 {
+  padding-left: 1rem;
+  font-weight: 900;
+  font-family: "Noto Sans Hebrew", sans-serif;
+  font-size: 22px;
+  line-height: 40px;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .title {
+    font-weight: 600;
+    font-family: "Noto Sans Hebrew", sans-serif;
+    font-size: 15px;
+    line-height: 30px;
+  }
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .title1 {
+    font-weight: 600;
+    font-family: "Noto Sans Hebrew", sans-serif;
+    font-size: 10px;
+    line-height: 30px;
+    padding-left: 1rem;
+  }
+}
+.details1 {
+  font-family: "Noto Sans Hebrew", sans-serif;
+  font-weight: 100;
+  font-size: 20px;
+  padding-left: 1rem;
+  text-transform: capitalize;
+}
+
+.details {
+  font-family: "Noto Sans Hebrew", sans-serif;
+  font-weight: 100;
+  font-size: 20px;
+  padding-left: 2rem;
+  text-transform: capitalize;
+}
+.details.email {
+  text-transform: lowercase;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .details {
+    font-family: "Noto Sans Hebrew", sans-serif;
+    font-weight: 100;
+    font-size: 15px;
+    padding-left: 0.5rem;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .details1 {
+    font-family: "Noto Sans Hebrew", sans-serif;
+    font-weight: 100;
+    font-size: 10px;
+    padding-left: 1rem;
+  }
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  .details1 {
+    font-family: "Noto Sans Hebrew", sans-serif;
+    font-weight: 100;
+    font-size: 15px;
+    padding-left: 1rem;
+  }
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #338573;
+
+  font-family: "Noto Sans Hebrew", sans-serif;
+  position: relative;
+  color: #fff;
+  font-size: 10px;
+  height: 4vh;
+  overflow-y: hidden;
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .footer {
+    font-size: 8px;
+  }
 }

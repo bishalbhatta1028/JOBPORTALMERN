@@ -1,20 +1,22 @@
 import mongoose from "mongoose";
 import Job from "../model/Jobs.js";
-// crate jobs
+import { APPLICANT, RECRUITER } from "../constant/role.js";
+
+// create jobs
 export const createJobController = async (req, res, next) => {
   try {
     const { company, position } = req.body;
-    if (!company) {
-      res.status(400).send("plese provide required field");
-    }
+    // if (!company || !position) {
+    //   res.status(400).send({
+    //     msg: "plese provide required field",
+    //   });
+    // }
     req.body.created_by = req.user.userId;
     const job = await Job.create(req.body);
     res.send({ job });
   } catch (err) {
-    res.status(400).send({
-      msg: err.message,
-      errors: err,
-    });
+    next(err);
+    // res.status(400).send(err);
   }
 };
 
@@ -23,18 +25,16 @@ export const getJobController = async (req, res, next) => {
   try {
     const { status, workType, search, sort } = req.query;
     const queryObject = {
-      created_by: req.user.userId,
+      created_by: req.user /*.userId*/,
     };
     if (status && status !== "all") {
       queryObject.status = status;
     }
-    if (workType && workType != "all") {
+    if (workType && workType !== "all") {
       queryObject.workType = workType;
     }
-    if (search) {
-      queryObject.position = { $regex: search, $options: "i" };
-    }
-    let queryResult = Job.find(queryObject);
+
+    let queryResult = Job.find();
 
     //sorting
     if (sort === "latest") {
@@ -43,26 +43,62 @@ export const getJobController = async (req, res, next) => {
     if (sort === "a-z") {
       queryResult = queryResult.sort("position");
     }
+    // Add search functionality
+    if (search) {
+      const searchRegex = new RegExp(search, "i");
+      queryResult = queryResult.or([
+        { position: { $regex: searchRegex } },
+        { company: { $regex: searchRegex } },
+        // Add other fields you want to search here
+      ]);
+    }
     //pagination
     const page = Number(req.query.page) || 1;
-    const limit = Number(req.query.limit) || 10;
+    const limit = Number(req.query.limit) || 25;
     const skip = (page - 1) * limit;
     queryResult = queryResult.skip(skip).limit(limit);
     //jobs count
-    const totalJobs = await Job.countDocuments(queryResult);
+    const totalJobs = await Job.countDocuments();
     const numberOfPage = Math.ceil(totalJobs / limit);
     const jobs = await queryResult;
 
     // const jobs = await Job.find();
     res.send({
       totalJobs,
-      jobs,
+      jobsPerPage: jobs.length,
       numberOfPage,
+      currentPage: page,
+      jobs,
     });
   } catch (err) {
     res.status(400).send({
       msg: err.message,
     });
+  }
+};
+
+// get single job
+export const getSingleJobController = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const job = await Job.findById(id);
+    res.send(job);
+  } catch (err) {
+    // console.log(err);
+    res.status(400).send(err);
+  }
+};
+// get job by user
+export const getJobByUser = async (req, res, next) => {
+  try {
+    const queryObject = {
+      created_by: req.user.userId,
+    };
+    let queryResult = Job.find(queryObject);
+    const jobs = await queryResult;
+    res.send(jobs);
+  } catch (err) {
+    res.send(err);
   }
 };
 
@@ -85,7 +121,7 @@ export const updateJobController = async (req, res) => {
 };
 
 // delete job
-export const deleteJobController = async (req, res) => {
+export const deleteJobController = async (req, res, next) => {
   try {
     const { id } = req.params;
     //find job on the basis of id
@@ -98,7 +134,7 @@ export const deleteJobController = async (req, res) => {
       message: "Job is deleted successfully",
     });
   } catch (err) {
-    res.status(404).send(err);
+    next(err);
   }
 };
 
@@ -150,7 +186,7 @@ export const jobStatsController = async (req, res) => {
     });
   } catch (err) {
     res.status(400).send(err);
-    console.log(err);
+    // console.log(err);
   }
 };
 
