@@ -5,15 +5,19 @@ import setReduxUser, { logoutReduxUser } from '../redux/slice/userSlice.js'
 import { FaHome } from 'react-icons/fa';
 import { CgProfile } from 'react-icons/cg';
 import UserProfileMenu from './UserProfile.jsx';
+import { useNavigate } from 'react-router-dom'
 export default function Navbar({ user }) {
 
 
     const { pathname } = useLocation()
     const reduxUser = useSelector((reduxStore) => { return reduxStore.user.value })
     const dispatch = useDispatch()
+
+    const navigate = useNavigate()
     const handleLogout = () => {
         // e.preventDefault()
         dispatch(logoutReduxUser())
+        navigate("/")
     }
 
 

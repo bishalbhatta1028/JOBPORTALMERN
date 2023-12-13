@@ -34,9 +34,9 @@ export default function Login() {
             localStorage.setItem("access_token", res.data.token)
             navigate("/")
         }).catch((err) => {
-            //console.log('login failed')
+
             toast.error(err.response.data.msg, {
-                autoClose: 5000,
+                autoClose: 100,
             })
 
         })

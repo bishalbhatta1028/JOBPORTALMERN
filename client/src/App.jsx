@@ -16,7 +16,7 @@ import Login from './pages/Login'
 import Home from './pages/Home'
 import { ToastContainer } from "react-toastify"
 import { setReduxUser } from './redux/slice/userSlice'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import ProtectedRoute from './components/ProtectedRoute'
 import AppliedJob from './pages/AppliedJob'
 import UpdateJobs from './pages/UpdateJobs'
@@ -25,6 +25,7 @@ import Delete from './pages/DeleteJob'
 
 
 function App() {
+
 
   const [user, setUser] = useState("");
   const dispatch = useDispatch()

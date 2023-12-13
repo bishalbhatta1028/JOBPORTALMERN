@@ -31,10 +31,10 @@ function Register() {
             });
             navigate("/")
         }).catch((err) => {
-
+            console.log(err)
             toast.error(err.response.data.err, {
                 position: "top-right",
-                autoClose: 5000,
+                autoClose: 500,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -83,7 +83,7 @@ function Register() {
                                     name="role"
                                     type="text"
 
-
+                                    required
                                     className="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-[#338573] placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#338573] sm:text-sm sm:leading-6"
                                 />
                             </div>

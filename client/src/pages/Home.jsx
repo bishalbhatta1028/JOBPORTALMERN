@@ -92,7 +92,7 @@ export default function Home() {
 
 
                 <div>
-                    <div className='flex '>
+                    <div className='flex my-8 '>
 
                         <div className="   flex  text-right">
                             <button
@@ -136,13 +136,7 @@ export default function Home() {
                         <h2 className='  list text-[ #000000] sm:mx-0.5 md:mx-1 lg:mx-16 xl:mx-64 sm:text-sm lg:text-xl xl:text-4xl' >All Popular list</h2>
 
                     </div>
-                    {/* <select className="" onChange={(e) => {
-                        setSortOption(e.target.value)
-                        navigate("/?sort=" + e.target.value)
-                    }}>Sort Jobs
-                        <option value="latest"> Find latest product</option>
-                        {/* <option value="a-z"> alphabetic order</option> */}
-                    {/* </select> */}
+
 
 
                     <ul className="  px-2 py-10 ">

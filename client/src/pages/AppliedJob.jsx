@@ -34,7 +34,7 @@ export default function AppliedJob(job) {
                 </div>
                 <div className="my-5 ">
 
-                    <div className=" container ">
+                    <div className=" container h-[100vh] ">
                         <table className="w-full text-left rtl:text-right text-gray-500 dark:text-gray-400">
 
 
@@ -54,7 +54,7 @@ export default function AppliedJob(job) {
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody >
+                            <tbody  >
                                 {jobItems.map(item => {
                                     return <tr key={item._id} className="  bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                         <th className="   py-4 details1   ">
@@ -77,7 +77,7 @@ export default function AppliedJob(job) {
                             </tbody>
                         </table>
                     </div>
-                </div>
+                </div >
             </>
         )
     }

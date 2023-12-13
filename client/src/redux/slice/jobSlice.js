@@ -15,7 +15,9 @@ const jobSlice = createSlice({
     addJob: (state, action) => {
       let job = action.payload;
       let oldItems = [...state.jobItems];
+
       localStorage.setItem("jobItems", JSON.stringify(action.payload));
+
       oldItems.push(job);
 
       state.jobItems = oldItems;
