@@ -10,7 +10,7 @@ import swaggerUi from "swagger-ui-express";
 import dotenv from "dotenv";
 
 import connectDB from "./config/db.js";
-import testRoutes from "./routes/testRoutes.js";
+
 import cors from "cors";
 import userRoute from "./routes/userRoute.js";
 import authRoute from "./routes/authRoute.js";
@@ -44,7 +44,6 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/api/test", testRoutes);
 app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute);
 app.use("/api/job", jobsRoute);

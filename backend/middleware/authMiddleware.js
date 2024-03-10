@@ -29,7 +29,7 @@ const userAuth = async (req, res, next) => {
     }
   } catch (err) {
     next(err);
-    console.log(err);
+    // console.log(err);
   }
 };
 export default userAuth;

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { setReduxJob } from '../redux/slice/jobSlice'
+import Footer from '../components/Footer';
 export default function AppliedJob(job) {
     const dispatch = useDispatch();
     //const jobItems = useSelector((reduxStore) => { return reduxStore.job.jobItems })
@@ -34,7 +35,7 @@ export default function AppliedJob(job) {
                 </div>
                 <div className="my-5 ">
 
-                    <div className=" container h-[100vh] ">
+                    <div className=" container h-[70vh] ">
                         <table className="w-full text-left rtl:text-right text-gray-500 dark:text-gray-400">
 
 
@@ -56,7 +57,7 @@ export default function AppliedJob(job) {
                             </thead>
                             <tbody  >
                                 {jobItems.map(item => {
-                                    return <tr key={item._id} className="  bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    return <tr key={item.useDispatch} className="  bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                         <th className="   py-4 details1   ">
                                             {item.job.company}
                                         </th>
@@ -78,6 +79,7 @@ export default function AppliedJob(job) {
                         </table>
                     </div>
                 </div >
+
             </>
         )
     }

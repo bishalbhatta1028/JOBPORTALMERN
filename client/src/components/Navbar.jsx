@@ -17,7 +17,7 @@ export default function Navbar({ user }) {
     const handleLogout = () => {
         // e.preventDefault()
         dispatch(logoutReduxUser())
-        navigate("/")
+        navigate("/login")
     }
 
 

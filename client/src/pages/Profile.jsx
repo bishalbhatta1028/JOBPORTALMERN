@@ -3,13 +3,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import setReduxUser, { logoutReduxUser } from '../redux/slice/userSlice.js'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from '../components/Footer.jsx';
 export default function Profile() {
     const reduxUser = useSelector((reduxStore) => { return reduxStore.user.value })
     const dispatch = useDispatch()
     if (reduxUser) {
         return (
             <>
-                <div className='h-[85vh]'> <div className="  py-8 bg-[#F4F5F7]">
+                <div className='h-[90vh]'> <div className="  py-8 bg-[#F4F5F7]">
 
                     <h2 className="text-center text-2xl font-bold leading-6 tracking-tight text-green-800  " >
                         My Profile

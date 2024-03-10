@@ -34,7 +34,7 @@ export default function Login() {
             localStorage.setItem("access_token", res.data.token)
             navigate("/")
         }).catch((err) => {
-
+            console.log(err)
             toast.error(err.response.data.msg, {
                 autoClose: 100,
             })
@@ -64,8 +64,9 @@ export default function Login() {
                                     name="email"
                                     type="email"
                                     autoComplete="email"
+                                    placeholder="something@gmaii.com"
                                     required
-                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-[#338573] placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#338573] sm:text-sm sm:leading-6"
+                                    className="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-[#338573] placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#338573] sm:text-sm sm:leading-6"
                                 />
                             </div>
                         </div>
@@ -87,8 +88,9 @@ export default function Login() {
                                     name="password"
                                     type="password"
                                     autoComplete="current-password"
+                                    placeholder="password"
                                     required
-                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    className="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 />
                             </div>
                         </div>

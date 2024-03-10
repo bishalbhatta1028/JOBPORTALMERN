@@ -5,6 +5,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
+import Footer from '../components/Footer';
 
 function UpdateJobs() {
     let initialState = {
@@ -108,7 +109,7 @@ function UpdateJobs() {
 
         <>
 
-            <div className="  min-h-full flex-1 flex-col justify-center h-20">
+            <div className=" no-scrollbar min-h-full flex-1 flex-col justify-center ">
                 <div className=" py-8 bg-[rgb(244,245,247)]">
 
                     <h2 className=" text-center text-2xl font-bold leading-6 tracking-tight text-gray-800  " >
@@ -183,6 +184,8 @@ function UpdateJobs() {
                                         className=" flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-lg  sm:leading-12 px-2"
                                         placeholder="Type *"
                                     />
+
+
                                 </div>
                                 <small className="text-red-600">{error.Type}</small>
                             </div>
@@ -302,7 +305,7 @@ function UpdateJobs() {
                             </div>
                         </div>
                         <div className=" col-span-4 my-4">
-                            <label htmlFor="jobRequirement" className="block  after:content-['*'] after:ml-0.5 after:text-red-500 text-lg font-bold leading-6 text-gray-900">
+                            <label htmlFor="jobRequirement" className="block no-scrollbar after:content-['*'] after:ml-0.5 after:text-red-500 text-lg font-bold leading-6 text-gray-900">
                                 Job Requirements
                             </label>
                             <div className="mt-2">
@@ -319,7 +322,7 @@ function UpdateJobs() {
                             </div>
                         </div>
                         <div className="   col-span-4 py-4 ">
-                            <label htmlFor="jobDescription" className="block after:content-['*'] after:ml-0.5 after:text-red-500 text-lg font-bold leading-6 text-gray-900">
+                            <label htmlFor="jobDescription no-scrollbar" className="block after:content-['*'] after:ml-0.5 after:text-red-500 text-lg font-bold leading-6 text-gray-900">
                                 Job Description
                             </label>
                             <div className="mt-2">
@@ -345,7 +348,7 @@ function UpdateJobs() {
 
             </form >
 
-
+            <Footer />
         </>
     );
 }

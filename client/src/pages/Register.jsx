@@ -67,7 +67,7 @@ function Register() {
                                     id="name"
                                     name="name"
                                     type="text"
-
+                                    palceholder="eg.name"
                                     required
                                     className="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-[#338573] placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#338573] sm:text-sm sm:leading-6"
                                 />
@@ -82,7 +82,7 @@ function Register() {
                                     id="role"
                                     name="role"
                                     type="text"
-
+                                    placeholder='Applicant or Recruiter'
                                     required
                                     className="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-[#338573] placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#338573] sm:text-sm sm:leading-6"
                                 />
@@ -99,6 +99,7 @@ function Register() {
                                     name="email"
                                     type="email"
                                     autoComplete="email"
+                                    placeholder='something@gmail.com'
                                     required
                                     className="block w-full rounded-md border-0 px-2  py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-[#338573] placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#338573] sm:text-sm sm:leading-6"
                                 />

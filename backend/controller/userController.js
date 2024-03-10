@@ -7,7 +7,7 @@ export const getUserController = async (req, res, next) => {
       _id: req.user.userId,
     });
 
-    res.send({ user });
+    res.send(user);
   } catch (err) {
     res.status(400).send(err);
   }

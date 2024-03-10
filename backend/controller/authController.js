@@ -26,14 +26,14 @@ export const registerController = async (req, res, next) => {
       abortEarly: false,
       allowUnknown: true,
     });
-    console.log(error);
+    // console.log(error);
     // console.log(error?.details);
     if (error?.details) {
       return res.status(400).send({
         errors: error?.details,
       });
     }
-    console.log(error);
+    // console.log(error);
     //const { name, email, password } = req.body;
 
     //validate
@@ -75,7 +75,7 @@ export const registerController = async (req, res, next) => {
     });
   } catch (err) {
     next(err);
-    console.log(err);
+    // console.log(err);
     //console.log(error.name);
   }
 };
@@ -110,7 +110,7 @@ export const loginController = async (req, res, next) => {
       "+password"
     );
     if (user) {
-      console.log(user);
+      // console.log(user);
 
       let matched = await bcrypt.compare(req.body.password, user.password);
       if (matched) {

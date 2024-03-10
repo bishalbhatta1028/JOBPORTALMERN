@@ -7,6 +7,7 @@ import { CgCalendarDates } from 'react-icons/cg'
 import { useNavigate } from 'react-router-dom'
 import { MdOutlineSort } from "react-icons/md";
 import banner1 from "../assets/images/banner1.png"
+import Footer from '../components/Footer'
 export default function Home() {
 
 
@@ -70,6 +71,7 @@ export default function Home() {
 
                     >
                         <div className=" my-16 flex items-center  rounded-lg"> <input
+
                             name="search"
                             type="text"
 
@@ -197,6 +199,7 @@ export default function Home() {
 
 
         </div>
+
         </>
     )
 

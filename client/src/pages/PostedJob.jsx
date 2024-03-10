@@ -17,6 +17,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { MdEdit } from "react-icons/md";
 import DeleteConfirmation from "../components/Delete"
 import { ToastContainer, toast } from 'react-toastify';
+import Footer from '../components/Footer';
 
 const PostedJob = (job) => {
     const jobItems = useSelector((reduxStore) => { return reduxStore.job.jobItems })
@@ -93,7 +94,7 @@ const PostedJob = (job) => {
         </div>
 
 
-        <div className="my-5">
+        <div className="my-5 h-[77vh]">
 
             <div className=" sm:mx-0.5 xl:mx-10">
                 <table className="w-full text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -132,7 +133,7 @@ const PostedJob = (job) => {
                                 <td className=" details1">
                                     {job.Location}
                                 </td>
-                                <td className=" details1 sm:flex-col-reverse">
+                                <td className=" details1" id="icons">
                                     {/* {job._id} */}
                                     <Link to={`/jobs/${job._id}`} > <button className=" pl-2 "><FaEye color='#338573' size={18} /></button></Link>
                                     {/* <button className="  " onClick={handleDeleteJob}><RiDeleteBin6Line color='#338573' size={18} /></button> */}

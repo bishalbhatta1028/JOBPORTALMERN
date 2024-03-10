@@ -4,6 +4,7 @@ import axios from "axios"
 import { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import { CgChevronDoubleLeftR } from 'react-icons/cg';
+import Footer from '../components/Footer';
 function UploadJobs() {
     // let error = {
     //     "company": "",
@@ -145,7 +146,7 @@ function UploadJobs() {
                                     type="text"
                                     name="position"
                                     value={data.position}
-
+                                    required
                                     className=" flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-lg sm:leading-12"
                                     placeholder="Title *"
                                 />
@@ -171,7 +172,7 @@ function UploadJobs() {
                                     type="enum"
                                     name="jobType"
                                     value={data.Type}
-
+                                    required
                                     className=" flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-lg  sm:leading-12 px-2"
                                     placeholder="Type *"
                                 />
@@ -195,6 +196,7 @@ function UploadJobs() {
                                     value={data.location}
                                     className=" flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-lg sm:leading-12"
                                     placeholder="Location*"
+                                    required
                                 />
                             </div>
                         </div>
@@ -222,7 +224,7 @@ function UploadJobs() {
                         </div>
 
                         <div className="sm:col-span-4 py-4">
-                            <label htmlFor="vacancyNumber" className="block after:content-['*'] after:ml-0.5 after:text-red-500 text-lg font-bold leading-6 text-gray-900">
+                            <label htmlFor="vacancyNumber" className="block after:content-[''] after:ml-0.5 after:text-red-500 text-lg font-bold leading-6 text-gray-900">
                                 Vacancy Number
                             </label>
                             <div className="mt-2">
@@ -306,7 +308,7 @@ function UploadJobs() {
                         </div>
                     </div>
                     <div className=" col-span-4 my-4">
-                        <label htmlFor="jobRequirement" className="block  after:content-['*'] after:ml-0.5 after:text-red-500 text-lg font-bold leading-6 text-gray-900">
+                        <label htmlFor="jobRequirement" className="block  no-scrollbar  after:content-['*'] after:ml-0.5 after:text-red-500 text-lg font-bold leading-6 text-gray-900">
                             Job Requirements
                         </label>
                         <div className="mt-2">
@@ -319,13 +321,13 @@ function UploadJobs() {
                                 rows={8}
                                 className=" w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-12"
                                 // defaultValue={''}
-
+                                required
                                 placeholder="Job Requirements Here"
                             />
                         </div>
                     </div>
                     <div className="   col-span-4 py-4 ">
-                        <label htmlFor="jobDescription" className="block after:content-['*'] after:ml-0.5 after:text-red-500 text-lg font-bold leading-6 text-gray-900">
+                        <label htmlFor="jobDescription" className="block no-scrollbar after:content-['*'] after:ml-0.5 after:text-red-500 text-lg font-bold leading-6 text-gray-900">
                             Job Description
                         </label>
                         <div className="mt-2">
@@ -338,7 +340,7 @@ function UploadJobs() {
                                 rows={8}
                                 className="  w-full  rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-lg sm:leading-12"
                                 // defaultValue={''}
-
+                                required
                                 placeholder="Job  Description Here"
                             />
                         </div>

@@ -10,7 +10,7 @@ export default {
         banner1: "url('./src/assets/images/banner1.png')",
       },
       color: {
-        primary: ["#338573"],
+        primary: "#338573",
       },
       screens: {
         sm: "320x", // Small screens
@@ -20,5 +20,9 @@ export default {
       },
     },
   },
-  plugins: [],
+
+  plugins: [
+    require("tailwind-scrollbar-hide"),
+    // ...
+  ],
 };

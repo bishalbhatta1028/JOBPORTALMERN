@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { addJob } from '../redux/slice/jobSlice'
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
+import Footer from '../components/Footer'
 function SingleJobDetails() {
 
     const [job, setJob] = useState({});
@@ -53,8 +54,8 @@ function SingleJobDetails() {
             &&
             <Link to="/appliedjobs" className='container flex justify-center my-4' > <button onClick={addtojob} className=" button w-32 text-lg hover:bg-blue-500  py-auto  " >Apply This Job</button></Link>
         }
-        <div className="my-4 container h-[80vh] ">
-            <div className="  border-4 rounded-lg  shadow-md">
+        <div className=" my-28  container  ">
+            <div className=" relative  border-4 rounded-lg  shadow-md">
                 <p className="title">Minimum Qulification : <span className="details ">{job.qualification}</span></p>
                 <p className="title ">Experience :<span className="details">{job.experience}</span></p>
                 <p className="title ">Location : <span className="details">{job.Location}</span> </p>
@@ -69,6 +70,8 @@ function SingleJobDetails() {
 
             </div >
         </div>
+
+
 
 
     </>
