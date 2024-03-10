@@ -21,23 +21,6 @@ dotenv.config();
 
 // mongodb connection
 connectDB();
-//swagger api config
-
-// const options = {
-//   definitation: {
-//     openapi: "3.0.0",
-//     info: {
-//       title: "Job portal Application",
-//       description: "Node Expressjs Job Portal Applicaton",
-//     },
-//     servers: [
-//       {
-//         url: "http://localhost:8080'",
-//       },
-//     ],
-//   },
-//   apis: ["./routes/*.js"],
-// };
 
 const app = express();
 //middleware
@@ -47,9 +30,6 @@ app.use(cors());
 app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute);
 app.use("/api/job", jobsRoute);
-
-//homeroute root swagger
-// app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
 //validation middleware
 app.use(errorMidddleware);

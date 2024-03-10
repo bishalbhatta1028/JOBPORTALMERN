@@ -26,41 +26,15 @@ export const registerController = async (req, res, next) => {
       abortEarly: false,
       allowUnknown: true,
     });
-    // console.log(error);
-    // console.log(error?.details);
+
     if (error?.details) {
       return res.status(400).send({
         errors: error?.details,
       });
     }
-    // console.log(error);
-    //const { name, email, password } = req.body;
 
-    //validate
-    // if (!name) {
-    //   return res.status(400).send({
-    //     message: "please provide name",
-    //   });
-    // }
-
-    // if (!email) {
-    //   return res.status(400).send({
-    //     message: "please provide email",
-    //   });
-    // }
-    // if (!password) {
-    //   return res.status(400).send({
-    //     message: "please provide password",
-    //   });
-    // }
-    // const existUser = await User.findOne({ email });
-    // if (existUser) {
-    //   return res.send({
-    //     message: "Email Already Register Please Login",
-    //   });
-    // }
     let hashed = await bcrypt.hash(req.body.password, 10);
-    // console.log(hashed);
+
     const user = await User.create({ ...req.body, password: hashed });
     // token
     const token = user.createJWT();
@@ -75,8 +49,6 @@ export const registerController = async (req, res, next) => {
     });
   } catch (err) {
     next(err);
-    // console.log(err);
-    //console.log(error.name);
   }
 };
 
@@ -116,7 +88,7 @@ export const loginController = async (req, res, next) => {
       if (matched) {
         user.password = undefined;
 
-        // let token = JWT.sign(user.toObject(), process.env.JWT_SECRET);
+        // ]]let token = JWT.sign(user.toObject(), process.env.JWT_SECRET);
         const token = user.createJWT();
         res.send({
           msg: "Login Successful",

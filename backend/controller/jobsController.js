@@ -186,37 +186,7 @@ export const jobStatsController = async (req, res) => {
     });
   } catch (err) {
     res.status(400).send(err);
-    // console.log(err);
+
   }
 };
 
-//UPDATE JOB
-//export const updateJobController = async (err, req, res, next) => {
-// try {
-//   res.send("this is update");
-// const { id } = req.params;
-// const { company, position } = req.body;
-// //validation
-// if (!company || !position) {
-//   res.status(400).send("Please provide all fields");
-// }
-// const job = await Job.findOne({ _id: id });
-// if (!job) {
-//   res.status(400).send(`no jobs found with this id${id}`);
-// }
-// if (req.user.userId == job.created_by.toString()) {
-//   return;
-// } else {
-//   res.status(401).send("you are not authorized to update this job");
-// }
-// const updateJob = await Job.findOneAndUpdate({ _id: id }, req.body, {
-//   new: true,
-// });
-// res.send({ updateJob });
-// } catch (err) {
-//   res.status(400).send({
-//    err,
-//  });
-// console.log(err);
-// }
-//};

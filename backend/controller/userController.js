@@ -26,15 +26,11 @@ export const updateUserController = async (req, res, next) => {
     user.name = name;
     user.email = email;
     user.role = role;
-    //await user.save();
-    //const token = user.createJWT();
 
     res.send({
       user,
-      // token,
     });
   } catch (err) {
-    // console.log(err);
     res.status(400).send(err);
   }
 };
